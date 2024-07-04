@@ -47,9 +47,9 @@ class EmoSet(Dataset):
         self.data_store = [
             [
                 self.info['emotion']['label2idx'][item[0]],
-                item[1],
-                os.path.join(data_root, item[2]),
-                os.path.join(data_root, item[3])
+                item[1].split('/')[-1].rsplit('.', 1)[0],
+                os.path.join(data_root, item[1]),
+                os.path.join(data_root, item[2])
             ]
             for item in data_store
         ]
